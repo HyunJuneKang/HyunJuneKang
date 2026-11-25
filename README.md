@@ -2,10 +2,10 @@
 
 # 안녕하세요, 강현준입니다 👋
 
-**업무 흐름과 데이터 정합성을 연결하는 백엔드 개발자**
+**금융 서비스와 배포 환경을 함께 만드는 개발자**
 
-Java · Spring Boot로 정책, 계약, 지급, 원장, 환수의 흐름을 구현합니다.<br/>
-SAP MM/FI · ABAP 경험을 바탕으로 업무 규칙을 이해하고, 테스트와 PR로 변경을 검증합니다.
+Spring Boot로 보험 수수료 지급·환수 로직을 구현하고, 팀원이 변경한 코드를 검증하고 배포할 환경을 구축했습니다.<br/>
+AWS VPC와 EC2를 구성하고 GitHub Actions와 Jenkins로 개발·검증 환경에서 신한DS 교육용 서버까지 배포 과정을 연결했습니다.
 
 [![GitHub](https://img.shields.io/badge/GitHub-HyunJuneKang-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/HyunJuneKang)
 [![FGC](https://img.shields.io/badge/Featured-FGC-087F8C?style=flat-square&logo=springboot&logoColor=white)](https://github.com/feegachu/fgc)
@@ -13,11 +13,11 @@ SAP MM/FI · ABAP 경험을 바탕으로 업무 규칙을 이해하고, 테스�
 
 </div>
 
-## 🚀 Featured Project
+## 🚀 Featured Projects
 
 ### [FGC · 보험 수수료 업무 플랫폼](https://github.com/feegachu/fgc)
 
-**5인 팀 · Tech Lead / Backend Lead · 2026.07 - 현재**
+**5인 팀 · 기술 리드 · 백엔드 및 배포 환경 구축 · 2026.07–11**
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white)
@@ -28,11 +28,19 @@ SAP MM/FI · ABAP 경험을 바탕으로 업무 규칙을 이해하고, 테스�
 
 정책·지급·원장·환수를 연결하고, 산정 근거와 변경 이력을 추적하는 보험 수수료 플랫폼입니다.
 
+- **검증한 이미지 배포** — AWS 개발 서버에 자동 배포한 이미지를 검증 서버에서 k6로 부하 테스트하고, 승인 후 같은 이미지 다이제스트로 신한DS 교육용 서버에 배포하도록 구성했습니다. [AWS 배포 파이프라인](https://github.com/feegachu/fgc/blob/develop/Jenkinsfile.fgc) · [검증 빌드의 신한DS 서버 배포](https://github.com/feegachu/fgc/blob/develop/Jenkinsfile.shinhan)
+- **CI 대기 시간 개선** — 여러 작업에서 중복 실행되던 npm 의존성 취약점 검사를 한 번으로 분리했습니다. 첫 작업 시작부터 마지막 검증 완료까지 9분 34초에서 4분 4초로 줄었습니다(변경 전후 각 1회 측정). [GitHub Actions 설정](https://github.com/feegachu/fgc/blob/develop/.github/workflows/ci.yml)
 - **영속성 전환** — MyBatis 잔여 구성을 제거하고 JPA·QueryDSL로 통합하며 조회 결과와 쓰기 시점을 검증했습니다. [PR #500](https://github.com/feegachu/fgc/pull/500)
 - **업무 정책 구현** — 4년·7년 분급 정책의 설정·검증·조회를 구현했습니다. [PR #758](https://github.com/feegachu/fgc/pull/758)
 - **계약 화면 개발** — 보험계약 목록·상세·등록·수정 화면을 React로 전환했습니다. [PR #519](https://github.com/feegachu/fgc/pull/519)
 - **검증 자동화** — React 시연 E2E·커버리지 CI와 변경 범위별 필수 검사를 정리했습니다. [PR #544](https://github.com/feegachu/fgc/pull/544) · [PR #601](https://github.com/feegachu/fgc/pull/601)
 - **환수 업무 연결** — 환수 통지서 PDF 생성·다운로드와 발행 이력을 구현했습니다. [PR #802](https://github.com/feegachu/fgc/pull/802)
+
+### 공고대로 · 채용공고 판정 근거 조회
+
+**2인 팀 · 대한민국 청년 CAREER FAIR AI 해커톤 · 2026.11**
+
+React와 TypeScript로 AI가 판정에 사용한 문장을 원문과 대조하는 화면을 개발했습니다. 실제 공고 3건을 연결하고, GitHub Actions에서 PR마다 테스트·린트·타입 검사·빌드를 실행하도록 구성했습니다. [공고대로 서비스 열기](https://gonggo-daero.vercel.app/)
 
 ## 🧩 More Projects
 
